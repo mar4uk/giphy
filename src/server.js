@@ -1,5 +1,8 @@
 import express from 'express';
 import { render } from './middlewares/render';
+import {
+  search,
+} from './controllers';
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -14,6 +17,8 @@ app.use('/dist', express.static('dist', {
 app.get('/', (req, res, next) => {
   next();
 });
+
+app.get('/search', search);
 
 app.use(render);
 
