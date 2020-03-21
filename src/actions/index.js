@@ -22,7 +22,7 @@ export const loadItems = (q) => {
       page: isNewSearch ? 0 : page
     });
 
-    fetch(`/search?${query}`, {
+    return fetch(`/search?${query}`, {
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
       }

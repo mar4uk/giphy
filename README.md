@@ -20,6 +20,12 @@ Build
 npm run build
 ```
 
+Run tests
+
+```bash
+npm run test
+```
+
 Start the server. Server will start on http://localhost:8080
 
 ```bash

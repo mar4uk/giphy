@@ -9,6 +9,7 @@ import { HttpError } from './utils/Error';
 
 const port = process.env.PORT || 8080;
 const app = express();
+app.use(compression());
 
 app.set('view engine', 'hbs');
 app.set('views', './src/views');
