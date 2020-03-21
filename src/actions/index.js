@@ -28,6 +28,7 @@ export const loadItems = (q) => {
       }
     })
       .then(res => res.json())
+      .then((data) => data.status === 'error' ? Promise.reject(data) : data)
       .then((data) => {
         return dispatch({
           type: LOAD_ITEMS,
@@ -43,8 +44,7 @@ export const loadItems = (q) => {
           }
         });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         dispatch({
           type: LOAD_ITEMS,
           meta: {

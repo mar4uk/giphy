@@ -1,6 +1,7 @@
 import {
   searchGifs
 } from '../data-providers';
+import { HttpError } from '../utils/Error';
 
 export async function search(req, res, next) {
   const {
@@ -21,6 +22,11 @@ export async function search(req, res, next) {
 
   if (!req.xhr) {
     next();
+    return;
+  }
+
+  if (!data || !pagination) {
+    next(new HttpError(500, 'Something went wrong'));
     return;
   }
 
