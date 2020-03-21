@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import { render } from './middlewares/render';
 import { handleError } from './middlewares/handleError';
 import {

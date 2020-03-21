@@ -4,15 +4,19 @@
   "description": "",
   "private": true,
   "scripts": {
-    "watch": "webpack --watch",
-    "build": "webpack",
-    "start": "node ./dist/server.js",
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "start": "cross-env NODE_ENV=production node ./dist/server.js",
+    "start:dev": "node ./dist/server.js",
+    "build:dev": "webpack --config webpack/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Irina Marchuk",
   "license": "ISC",
   "dependencies": {
     "classnames": "2.2.6",
+    "compression": "1.7.4",
+    "cross-env": "7.0.2",
     "express": "4.17.1",
     "got": "10.6.0",
     "hbs": "4.1.0",
@@ -43,6 +47,7 @@
     "sass-loader": "8.0.2",
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11",
+    "webpack-merge": "4.2.2",
     "webpack-node-externals": "1.7.2"
   }
 }

@@ -2,14 +2,14 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const APP_ROOT = path.resolve(__dirname);
+const APP_ROOT = path.resolve(__dirname, '..');
 const RESOLVE_EXTENSIONS = ['*', '.js', '.jsx', '.hbs'];
 
-module.exports = [
+module.exports = (mode) => ([
   {
     context: APP_ROOT,
     entry: './src/client.js',
-    mode: 'development',
+    mode,
     output: {
       filename: 'client.js',
       path: `${APP_ROOT}/dist`
@@ -40,7 +40,7 @@ module.exports = [
   {
     context: APP_ROOT,
     entry: './src/server.js',
-    mode: 'development',
+    mode,
     output: {
       filename: 'server.js',
       path: `${APP_ROOT}/dist`
@@ -76,4 +76,4 @@ module.exports = [
       })
     ]
   }
-];
+]);
