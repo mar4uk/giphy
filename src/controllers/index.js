@@ -4,17 +4,19 @@ import {
 
 export async function search(req, res, next) {
   const {
-    q
+    q,
+    page
   } = req.query;
 
   const limit = 5;
 
   const {
     data,
+    pagination,
   } = await searchGifs({
     q,
     limit,
-    offset: 0
+    offset: page * limit
   });
 
   if (!req.xhr) {
@@ -23,6 +25,8 @@ export async function search(req, res, next) {
   }
 
   res.json({
-    data
+    page: parseInt(page, 10) + 1,
+    items: data,
+    total: pagination.total_count
   });
 };

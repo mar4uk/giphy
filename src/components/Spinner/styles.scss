@@ -1,0 +1,27 @@
+.spinner {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.spinner:after {
+  animation: spin 1s linear infinite;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-left: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-top: 2px solid gray;
+  border-right: 2px solid transparent;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -12,11 +12,20 @@
   "author": "Irina Marchuk",
   "license": "ISC",
   "dependencies": {
+    "classnames": "2.2.6",
     "express": "4.17.1",
     "got": "10.6.0",
     "hbs": "4.1.0",
+    "immutability-helper": "3.0.1",
+    "lodash": "4.17.15",
+    "query-string": "6.11.1",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "react-lazyload": "2.6.5",
+    "react-redux": "7.2.0",
+    "redux": "4.0.5",
+    "redux-devtools-extension": "2.13.8",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.8.7",

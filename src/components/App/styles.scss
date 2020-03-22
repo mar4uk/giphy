@@ -1,3 +1,47 @@
-.container {
-  color: blue;
+.app__container {
+  min-width: 380px;
+}
+.app__search {
+  background-color: white;
+  padding: 30px 0;
+  position: sticky;
+  top: 0;
+}
+.app__results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.app__results-item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.app__results-item-link {
+  display: block;
+  width: 200px;
+  margin: auto;
+}
+
+.app__form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.app__form-input {
+  margin-right: 15px;
+}
+
+.app__form-submit {
+  width: 30%;
+}
+
+.app__spinner {
+  margin: 30px auto;
 }
